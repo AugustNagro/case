@@ -1,10 +1,10 @@
 ## Case 
-Elegant, multiplatform password management based on the renowned KDBX technology.
+Elegant, multiplatform password management using the renowned [KeePass](https://en.wikipedia.org/wiki/KeePass) database.
 
 ![Home](./demo-images/home.png "Home")
 
 Goals:
-* Full integration with the [KDBX](https://en.wikipedia.org/wiki/KeePass) password format
+* Full integration with the [KDBX](https://github.com/jorabin/KeePassJava2#keepassjava2-and-keepass) password format
 * Implementation in JavaFX
 * Responsive design, portable to multiple platforms
 * Security
@@ -12,11 +12,11 @@ Goals:
 
 ### Status
 
-Very much in development and not yet ready for real-world use. Supports most basic KeePass functionality on desktop. Future milestones include removing the AWT dependency (java.desktop module) and supporting mobile devices through GluonVM.
+Very much in development and not yet ready for the real world. Supports most basic KeePass functionality on desktop. Future milestones include removing the AWT dependency (java.desktop module) and supporting mobile devices through GluonVM.
 
 ### Installation
 
-* [Signed Jar](./dist/case-1.0.0.jar)
+* [Signed Jar](https://github.com/AugustNagro/case/raw/master/dist/case-1.0.0.jar)
 * Mac (todo)
 * Windows (todo)
 * Linux (todo)
@@ -25,16 +25,14 @@ Very much in development and not yet ready for real-world use. Supports most bas
 
 ### Features
 
-* AutoType: With Case open and a website's login field selected, type Command or Control with 'G' and Case will automatically type the username and password.
-* Customizable Preferences:
-
+* AutoType: With Case open and a website's login field selected, type Command or Control with 'G' and Case will automatically enter the username and password.
+* Customizable Preferences
 ![Preferences](./demo-images/preferences.png "Preferences")
-
-* Platform integrated menu and shortcuts:
+* Platform integrated menu and shortcuts
 
 ![Mac Menu](./demo-images/menu-mac.png "Mac Menu")
 
-* Custom Themes:
+* Custom Themes
 
 With the following css file,
 ```css
@@ -42,20 +40,15 @@ With the following css file,
     -fx-base: #0E2F44;
 }
 ```
-
 ![Dark Preferences](./demo-images/dark-preferences.png "Dark Prefernces")
-
 ![Dark Home](./demo-images/dark-home.png "Dark Home")
-
-Or alternatively for a purple gradient background,
+Or for fans of purple gradients,
 ```css
 .rootPane {
     -fx-background-color: linear-gradient(to bottom right, #ce0335, #cc00ff);
 }
 ```
-
 ![Purple Login](./demo-images/purple-login.png "Purple Login")
-
 To build new themes, look at Case's [base stylesheet](./src/main/resources/css/base.css), the [Modena Stylesheet](https://gist.github.com/maxd/63691840fc372f22f470) and JavaFX's [CSS Reference](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html).
 
 ### Credits
@@ -69,14 +62,12 @@ Many thanks to the foundational work of:
 * fix logic for adding/removing fields
 * cache menu instead of recreating on each view
     * keep observable-list of custom menu items.
-
 * Blocked
     * Remove java.desktop deps (see openjfx mailing list):
         * awt Robot
         * awt Desktop
     * Mobile views with GluonVM (need first to remove AWT)
         * https://github.com/javafxports/javafxmobile-plugin
-
 * Enhancements / Appearance tweaks
     * create GUI for utils.PasswordGenerator
     * refactor entrymodel class (no need for delayed initialization of properties).
@@ -93,31 +84,33 @@ Many thanks to the foundational work of:
     * text formatting in expires field
     * clearable search field
     * launch at startup option
-    
 * Pull request to KeePassJava2
     * Add features to dom module present in other implementations: tags, history, times used, etc.
     * remove Guava, other big dependencies
-    
 * Deployment
     * signing
     * Native installers for PC and mobile.
     * create binary css files with javapackager
 
 ### Development Notes
-How to build:
+**How to build:**
+
 `mvn clean install compile package assembly:single`
 
-Requirements when using SceneBuilder tool:
-* Before opening file, go to Preview -> Scene Stylesheets -> Import and select resources/css/base.css.
+**Requirements when using SceneBuilder tool:**
+* Import custom FXML components after building with `mvn package`
+    * See https://stackoverflow.com/a/30078204
+* Before opening a file, go to Preview -> Scene Stylesheets -> Import and select resources/css/base.css.
+    * this must be done every time SceneBuilder is opened
 * Then open the desired fxml file.
 * Without importing the stylesheet, the app will hang and melt your computer.
 
-FXML Notes: 
+**FXML Notes:**
 * Use Intellij Idea (Pro Version) or Eclipse with [e(fx)clipse](https://www.eclipse.org/efxclipse/install.html) for superior FXML integration.
 * Use SceneBuilder to view hand-made FXML changes, instead of creating the FXML itself. Scenebuilder FXML output is frankly unreadable.
 * Forward references for $variables are not supported. https://bugs.openjdk.java.net/browse/JDK-8090250
 
-Javapackager command to build native images (not yet working):
+**Javapackager command to build native images (not yet working):**
 
 javapackager -deploy -native dmg -BsystemWide=false -BappVersion=1.0.0 -name Case -title Case -vendor "August Nagro" -outdir dist -outfile Case-1.0.0 --module-path dist:/Users/august/.m2/repository/com/1stleg/jnativehook/2.1.0 --add-modules us.nagro.august.caseapp --module us.nagro.august.caseapp/us.nagro.august.caseapp.Main -description "Elegant, multiplatform password management based on the renowned KDBX technology"
 
