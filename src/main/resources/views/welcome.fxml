@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<fx:root xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         type="javafx.scene.layout.BorderPane"
+         fx:controller="us.nagro.august.caseapp.elements.WelcomePane"
+         styleClass="welcomePane">
+
+    <center>
+        <VBox fx:id="centerContent" alignment="CENTER">
+            <ImageView>
+                <Image url="@../images/iconx96.png"/>
+            </ImageView>
+
+            <TextFlow styleClass="paragraph-centered">
+                <Text text="Case is a multi-platform Password Manager.&#10;&#10;"/>
+
+                <Text text="&#8226; Passwords are encrypted in the renowned KDBX 2 format with AES encryption.&#10;&#10;"/>
+                <Text text="&#8226; Be extremely careful to not delete the .kdbx file, which contains your passwords. Consider saving this archive in a Google Drive folder (or similar) for backup.&#10;&#10;"/>
+                <Text text="&#8226; In the browser, use [CMD | Ctrl] + G to autotype the username and password. This requires the username field be selected, and Case be opened.&#10;&#10;"/>
+            </TextFlow>
+            <TextFlow>
+            </TextFlow>
+
+            <fx:define>
+                <VBox fx:id="autoTypeNotice" alignment="CENTER">
+                    <TextFlow styleClass="paragraph-centered">
+                        <Text>
+                            To use AutoType on MacOS, Case needs Accessibility permissions.
+                            The app will need to restart. Setup now?
+                        </Text>
+                    </TextFlow>
+                    <HBox alignment="CENTER">
+                        <Button onAction="#registerAutoTypeMac" styleClass="combined-button">Enable AutoType</Button>
+                        <Button onAction="#disableAutoType" styleClass="combined-button">Setup Later</Button>
+                    </HBox>
+                </VBox>
+            </fx:define>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" styleClass="padding-all">
+            <Button fx:id="continueToAppButton" onAction="#close">Continue to App</Button>
+        </HBox>
+    </bottom>
+
+</fx:root>

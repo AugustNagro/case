@@ -1,0 +1,96 @@
+.root {
+    -fx-light-text-color: seashell;
+}
+
+.rootPane {
+    -fx-pref-width: 900;
+    -fx-pref-height: 600;
+}
+
+.combined-button {
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.padding-top {
+    -fx-padding: 5, 0, 0, 0;
+}
+
+#openedFilesVbox {
+    -fx-padding: 10, 0, 0, 0;
+}
+
+.padding-all {
+    -fx-padding: 5;
+}
+
+.pad-vhbox, .pad-vhbox VBox, .pad-vhbox HBox {
+    -fx-spacing: 5;
+}
+
+.h1 {
+    -fx-font-size: 20;
+}
+
+.h2 {
+    -fx-font-size: 15;
+}
+
+.gridpane-hpadded {
+    -fx-hgap: 7;
+    -fx-padding: 10;
+}
+
+.gridpane-vpadded {
+    -fx-vgap: 10;
+}
+
+.paragraph-centered {
+    -fx-max-width: 400;
+    -fx-text-alignment: center;
+}
+
+.welcomePane {
+    -fx-pref-width: 600;
+    -fx-pref-height: 450;
+}
+
+.aboutPane {
+    -fx-pref-width: 400;
+    -fx-pref-height: 300;
+    -fx-padding: 10;
+}
+
+#groupsVBox {
+    -fx-pref-width: 200;
+    -fx-min-width: 100;
+}
+
+#entriesVBox {
+    -fx-pref-width: 200;
+    -fx-min-width: 100;
+}
+
+#selectedEntryVbox {
+    -fx-pref-width: 200;
+    -fx-alignment: center;
+}
+
+.listViewCentered .list-cell {
+    -fx-alignment: center;
+}
+
+.copyingLabel:hover {
+    -fx-text-fill: dodgerblue;
+}
+
+.entryPane {
+    /*For some reason 'infinity' does not work here for borderpane*/
+    -fx-pref-height: 9999;
+}
+
+/*Remove blue focus color from Listview and Treeview when selected*/
+ListView:focused, TreeView:focused {
+    -fx-background-color: -fx-box-border, -fx-control-inner-background;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 1;
+}

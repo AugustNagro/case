@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import us.nagro.august.caseapp.elements.CaseMenuBar?>
+<fx:root xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         type="javafx.scene.layout.BorderPane"
+         fx:controller="us.nagro.august.caseapp.elements.LoginPane"
+         styleClass="rootPane">
+
+    <top>
+        <CaseMenuBar>
+            <file>
+                <MenuItem text="Open KeyStore" accelerator="Shortcut+O" onAction="#openKeyFile"/>
+                <MenuItem text="Create KeyStore" accelerator="Shortcut+N" onAction="#createKeyFile"/>
+            </file>
+        </CaseMenuBar>
+    </top>
+
+    <center>
+        <VBox maxWidth="300.0" alignment="CENTER">
+            <VBox styleClass="pad-vhbox">
+                <HBox alignment="CENTER">
+                    <PasswordField fx:id="passField" onAction="#unlock" alignment="CENTER" disable="true"
+                                   promptText="Password"/>
+                    <Button fx:id="submitPass" onAction="#unlock" disable="true">Submit</Button>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Button onAction="#openKeyFile">Open KeyStore</Button>
+                    <Button onAction="#createKeyFile">Create KeyStore</Button>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="openedFilesVbox" id="openedFilesVbox" alignment="TOP_CENTER"/>
+        </VBox>
+    </center>
+
+</fx:root>

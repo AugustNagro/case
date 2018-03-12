@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import us.nagro.august.caseapp.elements.FocusedTextField?>
+<?import us.nagro.august.caseapp.elements.CopyingLabel?>
+<?import us.nagro.august.caseapp.elements.MaskedText?>
+<fx:root xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         type="javafx.scene.layout.BorderPane"
+         fx:controller="us.nagro.august.caseapp.elements.EntryPane"
+         styleClass="entryPane">
+
+    <center>
+        <FlowPane alignment="CENTER">
+            <GridPane fx:id="fieldsPane" styleClass="gridpane-hpadded">
+                <FocusedTextField fx:id="title" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <CopyingLabel labelFor="$title" GridPane.rowIndex="0" GridPane.columnIndex="0">Title</CopyingLabel>
+
+                <FocusedTextField fx:id="username" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <CopyingLabel labelFor="$username" GridPane.rowIndex="1" GridPane.columnIndex="0">Username
+                </CopyingLabel>
+
+                <MaskedText fx:id="password" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <CopyingLabel labelFor="$password" GridPane.rowIndex="2" GridPane.columnIndex="0">Password
+                </CopyingLabel>
+
+                <FocusedTextField fx:id="website" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <CopyingLabel labelFor="$website" GridPane.rowIndex="3" GridPane.columnIndex="0">Website</CopyingLabel>
+
+                <TextArea fx:id="notes" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                <CopyingLabel labelFor="$notes" GridPane.rowIndex="4" GridPane.columnIndex="0">Notes</CopyingLabel>
+
+                <DatePicker fx:id="expires" prefWidth="200" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                <CopyingLabel labelFor="$expires" GridPane.rowIndex="5" GridPane.columnIndex="0">Expires</CopyingLabel>
+
+                <columnConstraints>
+                    <ColumnConstraints/>
+                    <ColumnConstraints prefWidth="200"/>
+                </columnConstraints>
+            </GridPane>
+
+            <GridPane styleClass="gridpane-hpadded">
+                <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Group</Label>
+                <Label fx:id="group" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label GridPane.rowIndex="2" GridPane.columnIndex="0">Created</Label>
+                <Label fx:id="created" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Updated</Label>
+                <Label fx:id="updated" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+        </FlowPane>
+    </center>
+
+    <bottom>
+        <ButtonBar styleClass="padding-all">
+            <buttons>
+                <Button onAction="#newField" ButtonBar.buttonData="OTHER">Add Field</Button>
+                <Button fx:id="cancelButton" onAction="#cancel" ButtonBar.buttonData="CANCEL_CLOSE">Cancel</Button>
+                <Button fx:id="saveButton" onAction="#save" ButtonBar.buttonData="OK_DONE">Save</Button>
+                <Button onAction="#delete" ButtonBar.buttonData="LEFT">Delete</Button>
+            </buttons>
+        </ButtonBar>
+    </bottom>
+
+</fx:root>

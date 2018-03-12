@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import us.nagro.august.caseapp.elements.CaseMenuBar?>
+<fx:root xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         type="javafx.scene.layout.BorderPane"
+         fx:controller="us.nagro.august.caseapp.elements.PreferencesPane"
+         styleClass="rootPane">
+
+    <top>
+        <CaseMenuBar/>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER">
+            <Label styleClass="h1">Preferences</Label>
+            <GridPane alignment="CENTER" styleClass="gridpane-hpadded, gridpane-vpadded">
+                <Label GridPane.rowIndex="0" GridPane.columnIndex="0">AutoType (requires restart)</Label>
+                <CheckBox fx:id="autoTypeCB" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Human readable passwords</Label>
+                <CheckBox fx:id="humanPassCB" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label GridPane.rowIndex="2" GridPane.columnIndex="0">AutoLockout</Label>
+                <CheckBox fx:id="autoLockoutCB" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label GridPane.rowIndex="3" GridPane.columnIndex="0">AutoLockout Minutes</Label>
+                <TextField fx:id="autoLockoutMinTF" prefColumnCount="2" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label GridPane.rowIndex="4" GridPane.columnIndex="0">Custom Theme</Label>
+                <CheckBox fx:id="customThemeCB" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <columnConstraints>
+                    <ColumnConstraints/>
+                    <ColumnConstraints halignment="CENTER"/>
+                </columnConstraints>
+            </GridPane>
+            <HBox alignment="CENTER">
+                <Button fx:id="customThemeBtn" onAction="#newTheme" disable="true">Select Theme</Button>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <ButtonBar styleClass="padding-all">
+            <buttons>
+                <Button onAction="#resetToDefault" ButtonBar.buttonData="LEFT">Reset to Default</Button>
+                <Button fx:id="goHomeBtn" onAction="#goHome" ButtonBar.buttonData="RIGHT">Return Home</Button>
+                <Button fx:id="cancelBtn" onAction="#cancel" ButtonBar.buttonData="RIGHT">Cancel</Button>
+                <Button fx:id="saveBtn" onAction="#save" ButtonBar.buttonData="RIGHT">Save</Button>
+            </buttons>
+        </ButtonBar>
+    </bottom>
+
+</fx:root>

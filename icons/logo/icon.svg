@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon">
+            <g id="Group" transform="translate(13.000000, 6.000000)">
+                <path d="M35,22.147 L31,22.147 L31,15.595 C31,9.254 25.841,4.095 19.5,4.095 C13.159,4.095 8,9.254 8,15.595 L8,22.147 L4,22.147 L4,15.595 C4,7.048 10.953,0.095 19.5,0.095 C28.047,0.095 35,7.048 35,15.595 L35,22.147" id="Fill-2559" fill="#556080"></path>
+                <path d="M32,51.146 L7,51.146 C3.134,51.146 0,48.012 0,44.147 L0,22.147 L39,22.147 L39,44.147 C39,48.012 35.866,51.146 32,51.146" id="Fill-2565" fill="#97A5AF"></path>
+                <path d="M7,51.146 L19,51.146 L19,22.147 L0,22.147 L0,44.147 C0,48.012 3.134,51.146 7,51.146" id="Fill-2566" fill="#ABBCC6"></path>
+                <path d="M32,51.146 L7,51.146 C3.134,51.146 0,48.012 0,44.147 L39,44.147 C39,48.012 35.866,51.146 32,51.146" id="Fill-2576" fill="#8697CB"></path>
+                <polygon id="Fill-2577" fill="#556080" points="26 27.146 31 27.146 31 39.146 26 39.146"></polygon>
+                <polygon id="Fill-2578" fill="#556080" points="17 27.146 22 27.146 22 39.146 17 39.146"></polygon>
+                <polygon id="Fill-2579" fill="#556080" points="8 27.146 13 27.146 13 39.146 8 39.146"></polygon>
+                <polygon id="Fill-2651" fill="#313847" points="9 28.147 12 28.147 12 30.147 9 30.147"></polygon>
+                <polygon id="Fill-2652" fill="#313847" points="9 32.147 12 32.147 12 34.147 9 34.147"></polygon>
+                <polygon id="Fill-2653" fill="#8697CB" points="9 36.146 12 36.146 12 38.146 9 38.146"></polygon>
+                <polygon id="Fill-2654" fill="#313847" points="18 28.147 21 28.147 21 30.147 18 30.147"></polygon>
+                <polygon id="Fill-2655" fill="#8697CB" points="18 32.147 21 32.147 21 34.147 18 34.147"></polygon>
+                <polygon id="Fill-2656" fill="#313847" points="18 36.146 21 36.146 21 38.146 18 38.146"></polygon>
+                <polygon id="Fill-2657" fill="#313847" points="27 28.147 30 28.147 30 30.147 27 30.147"></polygon>
+                <polygon id="Fill-2658" fill="#313847" points="27 32.147 30 32.147 30 34.147 27 34.147"></polygon>
+                <polygon id="Fill-2659" fill="#8697CB" points="27 36.146 30 36.146 30 38.146 27 38.146"></polygon>
+                <path d="M0,44.147 C0,48.012 3.134,51.146 7,51.146 L19,51.146 L19,44.147 L0,44.147" id="Fill-2672" fill="#99ADE0"></path>
+            </g>
+        </g>
+    </g>
+</svg>

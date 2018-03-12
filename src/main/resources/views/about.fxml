@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<fx:root xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         type="javafx.scene.layout.BorderPane"
+         fx:controller="us.nagro.august.caseapp.elements.AboutPane"
+         styleClass="aboutPane">
+
+    <center>
+        <VBox alignment="TOP_CENTER">
+            <ImageView>
+                <Image url="@../images/iconx96.png"/>
+            </ImageView>
+            <TextFlow styleClass="paragraph-centered">
+                <Text text="Case Version 1.0&#10;"/>
+                <Text text="Copyright &#169; 2018 August Nagro&#10;"/>
+
+                <Text>Contact:</Text>
+                <Hyperlink onAction="#emailMe" text="augustnagro@gmail.com"/>
+                <Text text="&#10;&#10;"/>
+
+                <Text text="Special thanks to&#10;"/>
+            </TextFlow>
+            <TextFlow>
+                <Text text="&#8226;"/>
+                <Hyperlink onAction="#browseKeyPassJava2" text="KeyPassJava2;"/>
+                <Text text="interface to KeyPass.&#10;"/>
+
+                <Text text="&#8226;"/>
+                <Hyperlink onAction="#browseJavaFX" text="JavaFX;"/>
+                <Text text="multi-platform graphical toolkit.&#10;"/>
+
+                <Text text="&#8226;"/>
+                <Hyperlink onAction="#browseJfxMobile" text="javafx-mobile;"/>
+                <Text text="gradle plugin for building mobile applications&#10;"/>
+            </TextFlow>
+        </VBox>
+    </center>
+
+</fx:root>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import us.nagro.august.caseapp.elements.CaseMenuBar?>
+<fx:root xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         type="javafx.scene.layout.HBox"
+         fx:controller="us.nagro.august.caseapp.elements.HomePaneDesktop"
+         styleClass="rootPane">
+
+    <VBox>
+        <CaseMenuBar>
+            <file>
+                <MenuItem text="Preferences" accelerator="Shortcut+," onAction="#goPreferences"/>
+                <MenuItem text="New Entry" accelerator="Shortcut+N" onAction="#newEntry"/>
+                <MenuItem text="New Group" accelerator="Shortcut+G" onAction="#newGroup"/>
+                <MenuItem text="Search" accelerator="Shortcut+F" onAction="#selectSearch"/>
+                <MenuItem text="Lock" accelerator="Shortcut+L" onAction="#lock"/>
+            </file>
+        </CaseMenuBar>
+
+        <HBox VBox.vgrow="ALWAYS">
+            <VBox id="groupsVBox">
+                <TreeView fx:id="groupListTV" VBox.vgrow="ALWAYS"/>
+                <ToggleButton onAction="#recycleBin" prefWidth="Infinity" styleClass="combined-button">Recycle Bin</ToggleButton>
+                <Button onAction="#goPreferences" prefWidth="Infinity" styleClass="combined-button">Preferences</Button>
+                <Button onAction="#lock" prefWidth="Infinity" styleClass="combined-button">Lock</Button>
+            </VBox>
+
+            <VBox id="entriesVBox">
+                <TextField fx:id="search" alignment="CENTER" promptText="search"/>
+                <HBox alignment="CENTER">
+                    <Button onAction="#newEntry" prefWidth="9999" styleClass="combined-button">New Entry</Button>
+                    <Button onAction="#newGroup" prefWidth="9999" styleClass="combined-button">New Group</Button>
+                </HBox>
+                <ListView fx:id="entryListView" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <VBox fx:id="selectedEntryVbox" HBox.hgrow="ALWAYS"/>
+
+</fx:root>
