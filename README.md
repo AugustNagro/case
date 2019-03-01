@@ -1,5 +1,5 @@
 ## Case 
-Elegant, multiplatform password management using the renowned [KeePass](https://en.wikipedia.org/wiki/KeePass) database.
+Multiplatform password management using the renowned [KeePass](https://en.wikipedia.org/wiki/KeePass) database.
 
 ![Home](./demo-images/home.png "Home")
 
